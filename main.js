@@ -1,55 +1,35 @@
-
+var die = [];
 
 document.addEventListener('DOMContentLoaded', function(){
-    // Create Button that makes dice 
-    var button = document.createElement('Button');
-    var buttonText = document.createTextNode('Generate Die');
-    button.appendChild(buttonText);
-    document.body.appendChild(button);
-    // Create Dice
-    button.addEventListener('click', function(){
-        var diceContainer = document.createElement('div');
-        document.body.appendChild(diceContainer);
-        diceContainer.className = 'dice';
-        // Roll Dice
-        dice = {
-            value: 6,
-            roll: function () {
-              var randomNumber = Math.floor(Math.random() * this.value) + 1;
-              return randomNumber;
-            }
-          }
-          function printNumber(number) {
-            dice.innerHTML = number;
-          }
-          diceContainer.onclick = function() {
-            var result = dice.roll();
-            printNumber(result);
-            console.log(result)
-          };
-    });
-    var rollButton = document.createElement('button');
-    var rollButtonText = document.createTextNode('Roll Dice');
-    rollButton.appendChild(rollButtonText);
-    document.body.appendChild(rollButton);
-
+    // Die Button 
+    var diceBtn = document.createElement('button');
+    diceBtn.innerHTML = 'Generate Die';
+    document.body.appendChild(diceBtn);
+    //Roll Button
+    var rollBtn = document.createElement('button');
+    rollBtn.innerHTML = 'Roll Dice';
+    document.body.appendChild(rollBtn);
+    //SUM Button
+    var sumBtn = document.createElement('button');
+    sumBtn.innerHTML = 'Sum';
+    document.body.appendChild(sumBtn); 
+    //Die Function 
+    diceBtn.addEventListener('click', function(){
+        var newDie = new Die()
+        die.push(newDie)
+    })
+    function Die (roll, value) {
+        this.diceDiv = document.createElement('div')
+        this.roll()
+        this.diceDiv.className = 'dice';
+        document.body.appendChild(this.diceDiv);
+    }
+    Die.prototype.roll = function () {
+        var result = Math.floor(Math.random() * 6 + 1);
+        this.value = result;
+        this.diceDiv.innerText = result;
+    }
+    newDie.addEventListener('click', function(){
+        d.roll();
+    })
 });
-
-
-// var Dice = function (value, roll) {
-//     this.value = 6;
-//     this.roll = Math.floor(Math.random() * this.sides) + 1;;
-//     this.div = document.createElement('div')
-//     var h1 = document.createElement('h1');
-//     h1.innerHTML = this.roll;
-//     var h3 = document.createElement('h3');
-//     h3.innerHTML = this.email;
-//     this.div.appendChild(h1);
-//     this.div.appendChild(h3);
-//     document.body.appendChild(this.div);
-// }
-
-// var dice = function(value, roll) {
-//     this.value = 6
-//     this.roll = Math.floor(Math.random() * this.value) + 1; return;
-// }
