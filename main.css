@@ -1,0 +1,19 @@
+
+button {
+    background-color: yellow;
+    display: block;
+    border: 2px solid black;
+    
+}
+
+
+.dice {
+        width: 10em;
+        height: 10em;
+        margin: 1em;
+        background-color: grey;
+        float: left;
+        text-align: center;
+        margin:10px;
+        border-radius: 25px;
+}
