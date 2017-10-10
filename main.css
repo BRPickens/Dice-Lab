@@ -1,7 +1,6 @@
 
 button {
-    background-color: yellow;
-    display: inline-block;
+    background-color: lightskyblue;
     border: 2px solid black;
     margin: 5px;
     float: left;
@@ -13,11 +12,13 @@ button {
         width: 10em;
         height: 10em;
         margin: 1em;
-        background-color: grey;
+        background-color: lightskyblue;
         float: left;
         text-align: center;
         margin:10px;
         border-radius: 25px;
-        color: white;
+        color: black;
         line-height: 10em;
+        border: 2px solid black;
+        margin-top: 3em;
 }
