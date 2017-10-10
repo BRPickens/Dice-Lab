@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
         this.diceDiv.innerText = result;
     }
     die.addEventListener('click', function(d){
-        d.roll()
+        die.roll()
     })
     die.addEventListener('dblclick', function(remd) {
         remd.remove();
