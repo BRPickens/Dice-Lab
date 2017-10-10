@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function(){
         var newDie = new Die()
         die.push(newDie)
     })
+    rollBtn.addEventListener('click', function(){
+
+    })
+    sumBtn.addEventListener('click', function(){
+        
+    })
     function Die (roll, value) {
         this.diceDiv = document.createElement('div')
         this.roll()
@@ -29,7 +35,18 @@ document.addEventListener('DOMContentLoaded', function(){
         this.value = result;
         this.diceDiv.innerText = result;
     }
-    newDie.addEventListener('click', function(){
-        d.roll();
+    rollBtn.addEventListener('click', function(){
+        die.forEach(function (d){
+            d.roll()
+        })
+    })
+    sumBtn.addEventListener('click', function(){
+        var total = 0;
+
+        for (var i = 0; i < diceDiv.length; i++) {
+            total = total + diceDiv(i).value;
+        }
+        alert('Your sum amount is ' + total)
+        console.log(total)
     })
 });
